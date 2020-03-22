@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Create Signed JWT";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Sign</h1>
+        <p>JWT is generated and signed by private key stores in KeyVault. Only the managed identity of this web application has access to the sign method of keyvault for this key.</p>
+        @*<p>Enter text to sign.</p>*@
+
+
+        <form method="post">
+            @*<textarea asp-for="Message.Body" cols="30" rows="10"></textarea>*@
+            <br><br>
+            <input type="submit" value="Generate"/>
+        </form>
+
+        <p>Result:</p>
+        <textarea asp-for="Message.SignedBody" cols="30" rows="30" style=" min-width:500px; max-width:100%;max-height:350px;height:100%;width:100%;"></textarea>
+        
+    </div>
