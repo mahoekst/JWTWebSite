@@ -38,6 +38,8 @@ namespace JWTWebSite.Pages
         public void OnPost()
         {
             var texttosign = Message.Body;
+            var validinseconds = Message.validinseconds;
+            if (validinseconds == 0) validinseconds = 60;
 
             string issuer = "Matthijs";
             string audience = "my custom audience";
@@ -70,7 +72,7 @@ namespace JWTWebSite.Pages
                    audience: audience,
                    subject: claims,
                    notBefore: DateTime.UtcNow,
-                   expires: DateTime.UtcNow.AddSeconds(3),
+                   expires: DateTime.UtcNow.AddSeconds(validinseconds),
                    signingCredentials: securitycredentials
                );
 

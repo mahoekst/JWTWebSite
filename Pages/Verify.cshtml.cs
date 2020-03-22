@@ -38,7 +38,8 @@ namespace JWTWebSite.Pages
 
         public async void OnPost()
         {
-
+            //REPLACE BY OTHER PROJECT
+            //JUST FOR REFERENCE NOW
             Message.Body = "started validating";
 
             SecurityToken parsedToken = null;
@@ -47,6 +48,7 @@ namespace JWTWebSite.Pages
             var provider = new AzureServiceTokenProvider();
             var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(provider.KeyVaultTokenCallback));
             var cert = await kv.GetCertificateAsync(certid); //we schould cache this cert for x hours 
+
 
             string signedtokentoverify = Message.SignedBody;
 

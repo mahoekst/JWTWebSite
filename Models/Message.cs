@@ -10,5 +10,6 @@ namespace JWTWebSite.Models
         public string Body { get; set; }
         public string SignedBody { get; set; }
         public string result { get; set; }
+        public int validinseconds { get; set; }
     }
 }
